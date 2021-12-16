@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const {ProductsController} = require('../controllers');
+const {ProductsValidator} = require('../validators');
 //CRUD - Productos
 //Create - POST
-router.post('/', ProductsController.createProduct);
+router.post('/', ProductsValidator, ProductsController.createProduct);
 
 //Read All - GET
 router.get('/', ProductsController.findAllProduct);
