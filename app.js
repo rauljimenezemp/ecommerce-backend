@@ -16,4 +16,4 @@ app.get('/', (req, res) => {
 
 app.use('/api/v1', routes);
 
-module.exports = app;
+module.exports = app
