@@ -30,12 +30,11 @@ authSchema.pre('save', function(next) {
   next();
 })
 
-authSchema.methods.comparePassword = function(password) {
+authSchema.method('comparePassword', function(password) {
   const user = this;
   return bcrypt.compareSync(password, user.password);
-}
-
-
+});
 
 const AuthModel = mongoose.model('AuthModel', authSchema);
+
 module.exports = AuthModel;
